@@ -1,0 +1,16 @@
+name: "welcome to the code languages"
+
+on:
+  push:
+    branches:
+      - main
+      - test-1
+      - production-1
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "github-actions"
+        run: echo "hello githubactions"
