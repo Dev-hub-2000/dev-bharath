@@ -1,15 +1,15 @@
-name : "welcome to devbharath"
+name: "welcome to devbharath yaml code"
 
 on:
-  push:
-    branches:
-        - master
-        - test-1
-        - production-1
+    push:
+        branches:
+            - master
+            - main
+            - test-1
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name : "checkout nodeCode"
-              run : echo "welcome to the node code and data transfer"
+            - name: "welcome to checkout@v4"
+              run: echo "you are done "
