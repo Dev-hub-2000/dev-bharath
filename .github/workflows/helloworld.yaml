@@ -3,7 +3,7 @@ name : "welcome to devbharath"
 on:
   push:
     branches:
-        - main
+        - master
         - test-1
         - production-1
 
