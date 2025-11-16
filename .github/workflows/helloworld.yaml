@@ -12,4 +12,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "welcome to checkout@v4"
-              run: echo "you are done "
+              run: echo "you are done"
+            - name: "print the date"
+              run: date
