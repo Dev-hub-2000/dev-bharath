@@ -3,7 +3,6 @@ name: "welcome to devbharath yaml code"
 on:
     push:
         branches:
-            - master
             - main
             - test-1
 

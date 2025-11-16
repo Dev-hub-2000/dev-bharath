@@ -1,0 +1,26 @@
+name: "working on the multiplePipline"
+
+on:
+    push:
+        branches:
+            - master
+            - test-1
+            - production-1
+    pull_request:
+        branches:
+            - master
+            - test
+            - production-1
+
+jobs:
+    on-push-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "welcome to push-request"
+              run: echo "push request has been done !"
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "welcome to pull-request"
+              run: echo "pull request has been done"
