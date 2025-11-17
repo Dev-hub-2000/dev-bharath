@@ -1,24 +1,30 @@
-name: "welcome to multiple pipline yaml code"
+name: "working on the multiplePipline"
 
 on:
     push:
         branches:
-            - main
+            - master
             - test-1
             - production-1
+    pull_request:
+        branches:
+            - master
+            - test
+            - production-1
+
 jobs:
-    on_push-request:
+    on-push-request:
         if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
-            - name: "welcome to node-checkout@v4"
-              run: echo "you are done with multiple pipline"
+            - name: "welcome to push-request"
+              run: echo "push request has been done !"
 
-    on_pull-request:
+    on-pull-request:
         if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
-            - name: "welcome to node-checkout@v4 for pull request"
-              run: echo "you are done with multiple pipline for pull request"
-            - name: "print the date for pull request"
+            - name: "welcome to pull-request"
+              run: echo "pull request has been done"
+            - name: "print the date"
               run: date
