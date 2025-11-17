@@ -21,7 +21,7 @@ jobs:
         run: cat README.md
 
       - name: "print branch name"
-        run: echo "The branch name is ${{ github.ref_name }}"
+        run: echo "The branch name is dev"
 
   pull_request:
     if: ${{github.event_name =='pull_request'}}
