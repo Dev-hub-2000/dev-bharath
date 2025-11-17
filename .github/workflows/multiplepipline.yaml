@@ -1,27 +1,31 @@
-name: "multiple level pipline script language"
+name : "multiple pipline workFlow"
 
 on:
   push:
     branches:
       - main
       - test-1
-      - production-1
+      - production-2 
   pull_request:
     branches:
       - main
       - test-1
-      - production-1
+      - production-2
+
 jobs:
-  push_request:
-    if: ${{github.event_name == 'push'}}
+  push:
+    if: ${{github.event_name =='push'}}
     runs-on: ubuntu-latest
     steps:
-      - name: checkout Verfication code in node-Js
-        run: echo "print hello devbharath"
-
+      - name: "welcome to checkout@v4"
+        run: echo "you are done"
+      - name: "print the date"
+        run: date
   pull_request:
     if: ${{github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
     steps:
-      - name: checkout Verfication code in python
-        run: echo "print('hello devbharath' pull code)"
+      - name: "welcome to checkout@v4"
+        run: echo "you are in pull_request"
+      - name: "print the date and time"
+        run: date +"%Y-%m-%d %H:%M:%S"
