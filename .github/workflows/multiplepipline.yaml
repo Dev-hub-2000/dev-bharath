@@ -1,26 +1,23 @@
-name: "working on the multiplePipline"
+name: "welcome to multiple pipeline yaml code"
 
 on:
     push:
         branches:
-            - master
+            - main
             - test-1
             - production-1
     pull_request:
         branches:
-            - master
-            - test
-            - production-1
+            - main
+            - test-1
+            - production-
 
 jobs:
-    on-push-request:
+    build:
         runs-on: ubuntu-latest
         steps:
-            - name: "welcome to push-request"
-              run: echo "push request has been done !"
+            - name: "welcome to checkout@v4"
+              run: echo "you are done with multiple pipeline"
 
-    on-pull-request:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "welcome to pull-request"
-              run: echo "pull request has been done"
+            - name: "print the date function"
+              run: date
