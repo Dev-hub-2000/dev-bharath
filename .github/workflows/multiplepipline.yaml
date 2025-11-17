@@ -1,31 +1,34 @@
-name : "multiple pipline workFlow"
+name: "welcome to multiple pipeline"
 
 on:
   push:
     branches:
       - main
       - test-1
-      - production-2 
+      - production-1
   pull_request:
     branches:
       - main
       - test-1
-      - production-2
+      - production-1
 
 jobs:
-  push:
-    if: ${{github.event_name =='push'}}
+  push_request:
+    if: ${{github.event_name == 'push'}}
     runs-on: ubuntu-latest
     steps:
-      - name: "welcome to checkout@v4"
-        run: echo "you are done"
-      - name: "print the date"
-        run: date
+      - name: "checkout readme"
+        run: cat README.md
+
+      - name: "print branch name"
+        run: echo "The branch name is ${{ github.ref_name }}"
+
   pull_request:
-    if: ${{github.event_name == 'pull_request'}}
+    if: ${{github.event_name =='pull_request'}}
     runs-on: ubuntu-latest
     steps:
-      - name: "welcome to checkout@v4"
-        run: echo "you are in pull_request"
-      - name: "print the date and time"
-        run: date +"%Y-%m-%d %H:%M:%S"
+      - name: "checkout readme"
+        run: cat README.md
+
+      - name: "print branch name"
+        run: echo "The branch name is ${{ github.head_ref }}"
