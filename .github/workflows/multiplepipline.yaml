@@ -1,4 +1,4 @@
-name: "welcome to multiple pipeline yaml code"
+name: "welcome to multiple pipline yaml code"
 
 on:
     push:
@@ -6,18 +6,17 @@ on:
             - main
             - test-1
             - production-1
-    pull_request:
-        branches:
-            - main
-            - test-1
-            - production-
-
 jobs:
-    build:
+    on_push-request:
         runs-on: ubuntu-latest
         steps:
-            - name: "welcome to checkout@v4"
-              run: echo "you are done with multiple pipeline"
+            - name: "welcome to node-checkout@v4"
+              run: echo "you are done with multiple pipline"
 
-            - name: "print the date function"
+    on_pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "welcome to node-checkout@v4 for pull request"
+              run: echo "you are done with multiple pipline for pull request"
+            - name: "print the date for pull request"
               run: date
