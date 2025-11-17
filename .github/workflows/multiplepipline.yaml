@@ -8,12 +8,14 @@ on:
             - production-1
 jobs:
     on_push-request:
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
             - name: "welcome to node-checkout@v4"
               run: echo "you are done with multiple pipline"
 
     on_pull-request:
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
             - name: "welcome to node-checkout@v4 for pull request"
