@@ -1,33 +1,38 @@
-name: "welcome to multiple pipline run"
+name: "welcome to multiple pipline"
 
 on:
   push:
     branches:
       - main
-      - master
-      - production-1
       - test-1
+      - production-1
   pull_request:
     branches:
       - main
-      - master
       - test-1
       - production-1
 
 jobs:
   push_request:
-    runs-on: ubuntu-latest
     if: ${{github.event_name == 'push'}}
+    runs-on: ubuntu-latest
     steps:
-      - name: "welcome to print date"
-        run: echo date
+      - name: checkout nodeJs
+        run: |
+          echo "welcome to nodejs"
 
-      - name: "welcome to the world"
-        run: echo "welcome to devbharath github actions"
+      - name: checkout python
+        run: |
+          echo "welcome to python"
 
   pull_request:
-      runs-on : ubuntu-latest
-      if : ${{github.event_name == 'pull_request'}}
-      steps:
-         - name: "print the date function"
-           run: echo date 
+    if: ${{github.event_name == 'pull_request'}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout nodeJs
+        run: |
+          echo "welcome to nodejs"
+
+      - name: checkout python
+        run: |
+          echo "welcome to python"
